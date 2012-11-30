@@ -1,0 +1,240 @@
+a{
+    text-decoration: none;
+    color: rgb(63,76,107);
+}
+
+.container{
+    width: 1024px;
+    margin: 0 auto;
+    background: #ccc;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, .2);
+}
+
+.error-message{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -15px;
+    border: 1px solid red;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #FFD7D7;
+}
+
+/* HEADER RELATED STYLE */
+.header{
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(top bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    overflow: hidden;
+    clear: both;
+    padding-bottom: 20px;
+}
+
+.head{
+    clear: right;
+    overflow: hidden;
+}
+.logo{
+    background: url(logo.png) no-repeat center center;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    float: left;
+}
+.logo-text{
+    float: left;
+    line-height: 40px;
+    font-size: 26px;
+    text-shadow: 1px 1px 3px #ccc;
+}
+
+/* TOP MENU RELATED STYLE */
+.menu ul{
+    float: right;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    background: black;
+    margin-right: 30px;
+}
+.menu ul.horizontal li a{
+    padding: 10px;
+    display: block;
+    color: #ccc;
+}
+.menu ul.horizontal li a:hover{
+    background: rgb(242,246,248); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,246,248,1)), color-stop(50%,rgba(216,225,231,1)), color-stop(51%,rgba(181,198,208,1)), color-stop(100%,rgba(224,239,249,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* IE10+ */
+    background: linear-gradient(top bottom,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+    color: #333;
+}
+
+
+ul.horizontal li{
+    float: left;
+    border-right: solid 1px #333;
+}
+ul.horizontal li:last-child{
+    border-right: none;
+}
+
+/* MAIN CONTAINER RELATED COMMON STYLES*/
+.main-container{
+    overflow: hidden;
+}
+h2{
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding:10px 0;
+    border-bottom: solid 1px #999;
+}
+.col{
+    float: left;
+}
+.big{
+    width: 85%;
+    position: relative;
+}
+.small{
+    width: 15%;
+}
+.add-form{
+    clear: both;
+    overflow: hidden;
+}
+
+
+/* LEFT NAV BAR RELATED STYLES */
+.left-nav{
+    float: left;
+    margin: 0 10px;
+    width: 220px;
+    background: #eee;
+    border-radius: 10px;
+    padding: 10px;
+}
+.left-nav ul{
+    border-radius: 10px;
+    border: solid 1px #999;
+    overflow: hidden;
+}
+.left-nav li{
+    list-style: none;
+}
+.left-nav li a{
+    padding: 10px 5;
+    border-bottom: solid 1px #999;
+    display: block;
+}
+
+.left-nav li a:hover, .selected{
+    background: #ccc;
+}
+
+.left-nav li:last-child a{
+    border-bottom-width: 0;
+}
+
+input{
+    width: 90%;
+    padding:2px 5px;
+}
+
+input[type="submit"]{
+    padding: 5px;
+    width: 40px;
+    margin-left: -10px;
+}
+
+
+
+/* MAIN CONTENT AREA RELATED STYLES*/
+.main-container .content{
+    margin-left: 260px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #eee;
+}
+
+#todolist li{
+    list-style: none;
+    border: solid 1px #aaa;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 95%;
+}
+
+#todolist li a{
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    background: url(delete.png) no-repeat center center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+}
+
+textarea{
+    width: 98%;
+    height: 100px;
+    display: inline-block;
+    padding: 10px;
+    resize: none;
+}
+button{
+    width: 100%;
+    height: 100px;
+    padding: 40px;
+    display: block;
+}
+
+/* FOOTER RELATED STYLES*/
+.container .footer{
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* IE10+ */
+    background: linear-gradient(top bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
+}
+.container .footer ul.horizontal{
+    margin: 10px auto;
+    overflow: hidden;
+    width: 220px;
+    padding: 0;
+}
+.container .footer ul.horizontal a{
+    padding: 5px;
+    display: block;
+    color: #333;
+}
+.copyright{
+    text-align: center;
+    font-size: 10px;
+    padding: 0 0 20px;
+}
+
+
+
+​
