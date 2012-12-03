@@ -30,6 +30,7 @@ var ToDoView = function(ToDoModel){
 		todoItemOptions.append(deleteBtn);
 		
 		listItemEl.append('<p>' + data.title + '</p>');
+
 		listItemEl.append(todoItemOptions);
 		listEl.append(listItemEl);
 
@@ -38,10 +39,10 @@ var ToDoView = function(ToDoModel){
 			listItemEl.addClass('done');
 		}
 
-		deleteBtn.bind('removeFromModel', function(e,data){
+		deleteBtn.bind('removeFromModel', function(e, data) {
 			ToDoModel.removeItem(data);
 		});
-		doneBtn.bind('changeStatus', function(e, data){
+		doneBtn.bind('changeStatus', function(e, data) {
 			ToDoModel.toggleStatus(data);
 		});
 	},
@@ -52,6 +53,29 @@ var ToDoView = function(ToDoModel){
 	bindEventHandlers = function(){
 		var updateModel = function(e,data){
 			return ToDoModel.updateModel(data);
+		},
+		validateEditElements = function(){
+			$('#todolist li p.editable').removeClass('editable')
+				.attr('contentEditable',false);			
+			$('#todolist li .editDone').remove();
+		},
+		editTodoItem = function(event) {
+			event.preventDefault();
+			var itemId = parseInt($(this).attr('itemid')),
+				thisTodoItem = $('#todolist li[itemId='+itemId+'] p');
+
+			validateEditElements();
+
+			thisTodoItem.addClass('editable').attr('contentEditable',true);
+			$('<div class="editDone"><button>Done</button></div>').on('click',function(){
+				ToDoModel.updateToDoItem({
+					'itemId': itemId,
+					'todoText' : thisTodoItem.text()
+				});
+				$(this).remove();
+				thisTodoItem.removeClass('editable').attr('contentEditable',false);
+			}).appendTo('#todolist li[itemId='+itemId+']');
+			thisTodoItem.focus();
 		};
 
 		$('#todosubmit').bind('updateModel',updateModel);
@@ -123,6 +147,10 @@ var ToDoView = function(ToDoModel){
 			$(this).toggleClass('done');
 			$('#todolist li[itemid=' + itemId+']').toggleClass('done');
 		});
+
+		$('#todolist').on('dblclick', 'li', editTodoItem);
+		$('#todolist').on('click', '.edit', editTodoItem);
+
 	},
 
 	updateCount = function(){

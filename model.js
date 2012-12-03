@@ -43,9 +43,12 @@ var ToDoModel = (function(){
 		},
 		toggleStatus: function(itemId){
 			var currentToDoList = categories[currentCategory]['todoItems'];
-			console.log(currentToDoList[itemId]['status']);
-			currentToDoList[itemId]['status'] = !currentToDoList[itemId]['status'];
-			console.log(currentToDoList[itemId]['status']);
+			currentToDoList[itemId]['status'] = !currentToDoList[itemId]['status'];			
+		},
+		updateToDoItem: function(data){
+			var currentToDoList = categories[currentCategory]['todoItems'];
+			currentToDoList[data.itemId]['title']=data.todoText;
+			console.log(currentToDoList);
 		}
 
 	}
