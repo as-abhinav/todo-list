@@ -1,7 +1,5 @@
 $(document).ready(function(){
-	// toDoModel = new ToDoModel();
-	ToDoModel.setCategories(JSON.parse(localStorage.getItem('ToDo'))|| {});
-	ToDoView(ToDoModel);
+	var todoView = ToDoView.getInstance();
 });
 
 $(window).unload(function(e){
