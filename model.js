@@ -40,6 +40,12 @@ var ToDoModel = (function(){
 				count++;
 			}
 			return count;
+		},
+		toggleStatus: function(itemId){
+			var currentToDoList = categories[currentCategory]['todoItems'];
+			console.log(currentToDoList[itemId]['status']);
+			currentToDoList[itemId]['status'] = !currentToDoList[itemId]['status'];
+			console.log(currentToDoList[itemId]['status']);
 		}
 
 	}

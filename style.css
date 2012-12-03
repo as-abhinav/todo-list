@@ -149,17 +149,42 @@ input[type="submit"]{
     position: relative;
     width: 95%;
 }
-
-#todolist li a{
-    display: block;
+#todolist li.done p{
+    text-decoration: line-through;
+}
+#todolist li div.item-options{
+    display: none;
     position: absolute;
     top: 50%;
     margin-top: -10px;
-    background: url(delete.png) no-repeat center center;
-    background-size: 20px;
+    right: 2px;
+}
+#todolist li a{
+    margin-right: 2px;
+    display: inline-block;
     width: 20px;
     height: 20px;
-    right: -10px;
+    background-size: contain;
+    background: url(icons/icons.png) no-repeat;
+}
+#todolist li a.delete{
+    background-position: 0px 0px;
+}
+#todolist li a.edit{
+    background-position: -50px 0px;
+}
+#todolist li a.todo-checkbox{
+    background-position: -75px 0px;
+}
+#todolist li a.todo-checkbox:hover{
+    background-position: -25px 0px;
+}
+
+#todolist li a.done{
+    background-position: -25px 0px;
+}
+#todolist li:hover div.item-options{
+    display: block;
 }
 
 textarea{

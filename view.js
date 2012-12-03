@@ -19,13 +19,30 @@ var ToDoView = function(ToDoModel){
 		updateCount();
 	},
 	renderItem = function(listEl,data,itemId){
-		var deleteBtn = $('<a href="#" itemId="' + itemId + '" class="delete"></a>'),
+		var todoItemOptions = $('<div class="item-options"></div>'),
+			deleteBtn = $('<a href="#" itemId="' + itemId + '" class="delete"></a>'),
+			editBtn = $('<a href="#" itemId="' + itemId + '" class="edit"></a>'),
+			doneBtn = $('<a href="#" itemId="' + itemId + '" class="todo-checkbox"></a>'),
 			listItemEl = $('<li itemId="' + itemId + '"></li>');
+		
+		todoItemOptions.append(doneBtn);
+		todoItemOptions.append(editBtn);
+		todoItemOptions.append(deleteBtn);
+		
 		listItemEl.append('<p>' + data.title + '</p>');
-		listItemEl.append(deleteBtn);
+		listItemEl.append(todoItemOptions);
 		listEl.append(listItemEl);
+
+		if(data.status){
+			doneBtn.addClass('done');
+			listItemEl.addClass('done');
+		}
+
 		deleteBtn.bind('removeFromModel', function(e,data){
 			ToDoModel.removeItem(data);
+		});
+		doneBtn.bind('changeStatus', function(e, data){
+			ToDoModel.toggleStatus(data);
 		});
 	},
 	showErrorMessage = function(parentEl){
@@ -51,7 +68,8 @@ var ToDoView = function(ToDoModel){
 
 			var itemId = $(this).triggerHandler('updateModel',{
 				category: categoryList.children('.selected').text(),
-				todoItem: {'title':todoData}
+				todoItem: {'title':todoData,
+							'status':false}
 			});
 
 			renderItem($('#todolist'),{
@@ -96,6 +114,14 @@ var ToDoView = function(ToDoModel){
 			$('#todolist li#' + itemId).remove();
 			$('#todolist li[itemid='+itemId+']').remove();
 			updateCount();
+		});
+
+		$('#todolist').on('click', '.todo-checkbox', function(event) {
+			event.preventDefault();
+			var itemId = parseInt($(this).attr('itemid'));
+			$(this).triggerHandler('changeStatus', itemId);
+			$(this).toggleClass('done');
+			$('#todolist li[itemid=' + itemId+']').toggleClass('done');
 		});
 	},
 
