@@ -2,7 +2,7 @@ var ToDoView = (function(){
 	var instance,
 	
 	init = function(todoModel){
-		todoModel.setCategories(JSON.parse(localStorage.getItem('ToDo'))|| {});
+		todoModel.setCategories(LocalStorage.getLocalStorage('ToDo')|| {});
 		var categoryList = $('#todoCategoryList'),
 			todoList = $('#todolist'),
 
@@ -33,7 +33,7 @@ var ToDoView = (function(){
 			todoItemOptions.append(editBtn);
 			todoItemOptions.append(deleteBtn);
 			
-			listItemEl.append('<p>' + data.title + '</p>');
+			listItemEl.append('<p itemId="'+itemId+'">' + data.title + '</p>');
 
 			listItemEl.append(todoItemOptions);
 			listEl.append(listItemEl);
@@ -59,6 +59,13 @@ var ToDoView = (function(){
 				return todoModel.updateModel(data);
 			},
 			validateEditElements = function(){
+				var todoItem = $('#todolist li p.editable'),
+					itemId = parseInt(todoItem.attr('itemId'));
+
+				if(!itemId){
+					return;
+				}
+				todoItem.text(todoModel.getToDoItem(itemId));
 				$('#todolist li p.editable').removeClass('editable')
 					.attr('contentEditable',false);			
 				$('#todolist li .editDone').remove();
@@ -72,6 +79,7 @@ var ToDoView = (function(){
 
 				thisTodoItem.addClass('editable').attr('contentEditable',true);
 				$('<div class="editDone"><button>Done</button></div>').on('click',function(){
+					thisTodoItem.text(thisTodoItem.text().trim());
 					todoModel.updateToDoItem({
 						'itemId': itemId,
 						'todoText' : thisTodoItem.text()
