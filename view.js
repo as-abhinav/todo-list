@@ -40,11 +40,11 @@ var ToDoView = (function(){
 			listEl.append(listItemEl);
 
 			listItemEl.hover(function() {
-				todoItemOptions.animate({
+				todoItemOptions.stop(true,false).animate({
 					marginLeft: 0
 				},150);
 			},function() {
-				todoItemOptions.animate({
+				todoItemOptions.stop(true,false).animate({
 					marginLeft: 100
 				},150);	
 			});
