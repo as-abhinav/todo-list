@@ -179,6 +179,7 @@ input[type="submit"]{
     padding: 3px;
     border-radius: 10px 0 0 10px;
     margin-left: 100%;
+    background-color: #CCC;
 }
 
 #todolist li a{
