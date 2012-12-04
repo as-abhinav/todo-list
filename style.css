@@ -164,16 +164,21 @@ input[type="submit"]{
     box-shadow: inset 0px 1px 4px #867474;
 }
 
-
-#todolist li div.item-options{
-    display: none;
+.slider {
     position: absolute;
     top: 10px;
     right: 0px;
+    width: 80px;
+    height: 30px;
+    overflow: hidden;
+}
+#todolist li div.item-options{
+    width: 100%;
     border: 1px solid #969696;
     border-right: 0px;
     padding: 3px;
     border-radius: 10px 0 0 10px;
+    margin-left: 100%;
 }
 
 #todolist li a{
@@ -200,9 +205,12 @@ input[type="submit"]{
 #todolist li a.done{
     background-position: -25px 0px;
 }
-#todolist li:hover div.item-options{
+
+
+
+/*#todolist li:hover div.item-options{
     display: block;
-}
+}*/
 textarea{
     width: 98%;
     height: 100px;

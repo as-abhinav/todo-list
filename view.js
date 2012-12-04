@@ -27,16 +27,27 @@ var ToDoView = (function(){
 				deleteBtn = $('<a href="#" itemId="' + itemId + '" class="delete"></a>'),
 				editBtn = $('<a href="#" itemId="' + itemId + '" class="edit"></a>'),
 				doneBtn = $('<a href="#" itemId="' + itemId + '" class="todo-checkbox"></a>'),
-				listItemEl = $('<li itemId="' + itemId + '"></li>');
+				listItemEl = $('<li itemId="' + itemId + '"></li>'),
+				parentDiv = $('<div class="slider"></div>');
 			
 			todoItemOptions.append(doneBtn);
 			todoItemOptions.append(editBtn);
 			todoItemOptions.append(deleteBtn);
 			
 			listItemEl.append('<p itemId="'+itemId+'">' + data.title + '</p>');
-
-			listItemEl.append(todoItemOptions);
+			parentDiv.append(todoItemOptions);
+			listItemEl.append(parentDiv);
 			listEl.append(listItemEl);
+
+			listItemEl.hover(function() {
+				todoItemOptions.animate({
+					marginLeft: 0
+				},150);
+			},function() {
+				todoItemOptions.animate({
+					marginLeft: 100
+				},150);	
+			});
 
 			if(data.status){
 				doneBtn.addClass('done');
@@ -49,6 +60,7 @@ var ToDoView = (function(){
 			doneBtn.bind('changeStatus', function(e, data) {
 				todoModel.toggleStatus(data);
 			});
+			
 		},
 		showErrorMessage = function(parentEl){
 			$('.error-message').fadeIn().delay(1000).fadeOut();
