@@ -17,9 +17,12 @@ var ToDoView = (function(){
 		renderToDoList = function(currentToDoList){
 			var	todolist = $('#todolist');
 			todolist.empty();
+
 			for(var itemId in currentToDoList){
 				renderItem(todolist,currentToDoList[itemId],itemId);
 			}
+			todolist.sortable();
+        	// todolist.disableSelection();
 			updateCount();
 		},
 		renderItem = function(listEl,data,itemId){
@@ -39,6 +42,12 @@ var ToDoView = (function(){
 			listItemEl.append(parentDiv);
 			listEl.append(listItemEl);
 
+			listItemEl.mouseup(function(){
+		      listItemEl.css({'border-width':'1px'});
+		    }).mousedown(function(){
+		      listItemEl.css({'border-width':'2px'});
+		    });
+			
 			listItemEl.hover(function() {
 				todoItemOptions.stop(true,false).animate({
 					marginLeft: 0
