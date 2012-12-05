@@ -36,8 +36,8 @@ var ToDoModel = function(){
 	}
 	this.removeItem = function(itemId){
 		var currentToDoList = categories[currentCategory]['todoItems'];
-		setLocalStorage();
 		delete currentToDoList[itemId];
+		setLocalStorage();
 	}
 	this.getCount = function(data){
 		var count = 0;

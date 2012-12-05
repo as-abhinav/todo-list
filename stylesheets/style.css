@@ -90,11 +90,11 @@ h2{
 /* LEFT NAV BAR RELATED STYLES */
 .left-nav{
     float: left;
-    margin: 0 10px;
+    margin: 0 1.5%;
     width: 220px;
     background: #eee;
     border-radius: 10px;
-    padding: 10px;
+    padding: 1%;
 }
 .left-nav ul{
     border-radius: 10px;
@@ -134,8 +134,8 @@ input[type="submit"]{
 /* MAIN CONTENT AREA RELATED STYLES*/
 .main-container .content{
     margin-left: 260px;
-    margin-right: 10px;
-    padding: 10px;
+    margin-right: 1%;
+    padding: 1%;
     border-radius: 10px;
     background: #eee;
 }
@@ -144,10 +144,10 @@ input[type="submit"]{
     list-style: none;
     border: solid 1px #aaa;
     border-radius: 10px;
-    padding: 10px;
+    padding: 1%;
     margin-bottom: 10px;
     position: relative;
-    width: 95%;
+    width: 97%;
     background-color: #EEEEEE;
 }
 
@@ -223,8 +223,10 @@ textarea{
 button{
     width: 100%;
     height: 100px;
-    padding: 40px;
+    padding: 1%;
     display: block;
+    font-size: 24px;
+    font-variant: small-caps;
 }
 
 #todolist .editDone{
