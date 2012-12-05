@@ -22,7 +22,6 @@ var ToDoView = (function(){
 				renderItem(todolist,currentToDoList[itemId],itemId);
 			}
 			todolist.sortable();
-        	// todolist.disableSelection();
 			updateCount();
 		},
 		renderItem = function(listEl,data,itemId){
