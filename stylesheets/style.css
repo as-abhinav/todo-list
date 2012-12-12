@@ -150,6 +150,10 @@ input[type="submit"]{
     width: 97%;
     background-color: #EEEEEE;
 }
+#todolist li.ui-sortable-placeholder{
+  margin-bottom: 10px;
+  height: 34px;
+}
 
 #todolist li p{
     margin: 5px 70px 5px 5px;
@@ -167,9 +171,9 @@ input[type="submit"]{
 
 .slider {
     position: absolute;
-    top: 10px;
+    top: 6px;
     right: 0px;
-    width: 80px;
+    width: 75px;
     height: 30px;
     overflow: hidden;
 }

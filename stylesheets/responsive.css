@@ -19,3 +19,9 @@
 button {
 	font-size: 20px;
 }
+
+/* EXTRA FOR TODO LIST*/
+.slider {
+  top: 2px;
+  right: 0;
+}
