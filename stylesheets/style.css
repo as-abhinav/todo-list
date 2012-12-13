@@ -1,291 +1,126 @@
-a{
-    text-decoration: none;
-    color: rgb(63,76,107);
-}
-
-.container{
-    width: 1024px;
-    margin: 0 auto;
-    background: #ccc;
-    box-shadow: 0 0 30px 5px rgba(0, 0, 0, .2);
-}
-
-.error-message{
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    margin-left: -100px;
-    margin-top: -15px;
-    border: 1px solid red;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #FFD7D7;
-}
-
-/* HEADER RELATED STYLE */
-.header{
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
-    background: linear-gradient(top bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
-    overflow: hidden;
+.clearfix:after {
+    content: "";
     clear: both;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    display: block;
+    height: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #DBD9D9;
+}
+button {
+    color: #DBD9D9;
+    text-shadow: 0px -1px 1px #121212;
 }
 
-.head{
-    clear: right;
-    overflow: hidden;
-}
-.logo{
-    background: url(../images/logo.png) no-repeat center center;
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    float: left;
-}
-.logo-text{
-    float: left;
-    line-height: 40px;
-    font-size: 26px;
-    text-shadow: 1px 1px 3px #ccc;
+.main-container {
+    background: -webkit-linear-gradient(45deg, #575757 10%, #373737 90%);
+    background-size: 2px 2px;
 }
 
-/* TOP MENU RELATED STYLE */
-
-
-/* MAIN CONTAINER RELATED COMMON STYLES*/
-.main-container{
-    overflow: hidden;
+.logo {
+    background:-webkit-linear-gradient(#5F5D5D 10%, #444343 91%);
 }
-h2{
+
+#search {
+    background: -webkit-linear-gradient(left, #363636, #343434);
+    background-size: 1px 1px;
+    font-family: Arial, sans-serif;
     font-size: 14px;
-    margin-bottom: 10px;
-    padding:10px 0;
-    border-bottom: solid 1px #999;
-}
-.col{
-    float: left;
-}
-.big{
-    width: 85%;
-    position: relative;
-}
-.small{
-    width: 15%;
-}
-.add-form{
-    clear: both;
-    overflow: hidden;
+    line-height: 24px;
+    color: #DBD9D9;
 }
 
+.logo, #search {
+    box-shadow: 0 0 3px 2px #292929 inset;
+    outline: 0px;
+}
 
-/* LEFT NAV BAR RELATED STYLES */
-.left-nav{
-    float: left;
-    margin: 0 1.5%;
-    width: 220px;
-    background: #eee;
-    border-radius: 10px;
-    padding: 1%;
+.list {
+    background: -webkit-linear-gradient(#363636, #333333);
+    background-size: 2px 2px;
+    box-shadow: 0 0 3px 2px #1B1B1B inset;
 }
-.left-nav ul{
-    border-radius: 10px;
-    border: solid 1px #999;
-    overflow: hidden;
+
+.list li {
+    letter-spacing: 1px;
+    box-shadow: 2px 3px 2px -2px #3B3B3B;
+    text-shadow: -1px -1px 2px #161616
 }
-.left-nav li{
-    list-style: none;
+
+.list li.selected {
+    background: -webkit-linear-gradient(#461D22, #441B20),
+        -webkit-linear-gradient(27deg, #451E22, #3F161B);
+    background-size: 2px 2px;  
+    box-shadow: 2px 3px 2px -2px #252424;
 }
-.left-nav li a{
-    padding: 10px 5;
-    border-bottom: solid 1px #999;
+
+.right {
+    background: -webkit-linear-gradient(#EDEDE9, #EFEFE9);
+    background-size: 2px 2px;
+    box-shadow: 0 0 2px 2px #d2d2ce inset;
+}
+
+.heading {
+    color: #CF4F4F;
+    line-height: 22px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: -1px 0px 0px #050505;
+}
+
+.count {
+    color: #787573;
+    text-shadow: none;
+}
+
+.add-new {
+    font-size: 22px;
+    line-height: 25px;
+    color: #D4D4D3;
+    text-shadow: 0 0 2px #838381;
+    cursor: pointer;
+    box-shadow: 1px -1px 2px #EDEDE8;
+}
+
+.add-new:hover {
+    text-shadow: 0 0 3px #070707;
+    box-shadow: 0px 0px 2px 0px #B3B3B0;
+}
+
+.sidebar:hover .uncheck {
     display: block;
+    width: 35px;
+    height: 35px;
+    margin: 2px;
+    background: url(../images/uncheck.png);
 }
 
-.left-nav li a:hover, .selected{
-    background: #ccc;
+.check {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 2px;
+    background: url(../images/check.png);
 }
 
-.left-nav li:last-child a{
-    border-bottom-width: 0;
-}
-
-input{
-    width: 90%;
-    padding:2px 5px;
-}
-
-input[type="submit"]{
+.task span {
+    line-height: 35px;
+    height: 35px;
     padding: 5px;
-    width: 40px;
-    margin-left: -10px;
+    color: black;
 }
 
-
-
-/* MAIN CONTENT AREA RELATED STYLES*/
-.main-container .content{
-    margin-left: 260px;
-    margin-right: 1%;
-    padding: 1%;
-    border-radius: 10px;
-    background: #eee;
-}
-
-#todolist li{
-    list-style: none;
-    border: solid 1px #aaa;
-    border-radius: 10px;
-    padding: 1%;
-    margin-bottom: 10px;
-    position: relative;
-    width: 97%;
-    background-color: #EEEEEE;
-}
-#todolist li.ui-sortable-placeholder{
-  margin-bottom: 10px;
-  height: 34px;
-}
-
-#todolist li p{
-    margin: 5px 70px 5px 5px;
-}
-
-#todolist li.done p{
+.task .completed {
     text-decoration: line-through;
+    color: #858383;
 }
 
-#todolist li p.editable {
-    background-color: white;
-    padding: 9px;
-    box-shadow: inset 0px 1px 4px #867474;
-}
-
-.slider {
-    position: absolute;
-    top: 6px;
-    right: 0px;
-    width: 75px;
-    height: 30px;
-    overflow: hidden;
-}
-#todolist li div.item-options{
-    width: 100%;
-    border: 1px solid #969696;
-    border-right: 0px;
-    padding: 3px;
-    border-radius: 10px 0 0 10px;
-    margin-left: 100%;
-    background-color: #CCC;
-}
-
-#todolist li a{
-    margin-right: 2px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-size: contain;
-    background: url(../images/icons.png) no-repeat;
-}
-#todolist li a.delete{
-    background-position: 0px 0px;
-}
-#todolist li a.edit{
-    background-position: -50px 0px;
-}
-#todolist li a.todo-checkbox{
-    background-position: -75px 0px;
-}
-#todolist li a.todo-checkbox:hover{
-    background-position: -25px 0px;
-}
-
-#todolist li a.done{
-    background-position: -25px 0px;
-}
-
-
-
-/*#todolist li:hover div.item-options{
+.task .editable {
+    outline: none;
+    box-shadow: inset 0px 0px 5px -1px black;
     display: block;
-}*/
-textarea{
-    width: 98%;
-    height: 100px;
-    display: inline-block;
-    padding: 10px;
-    resize: none;
-}
-button{
-    width: 100%;
-    height: 100px;
-    padding: 1%;
-    display: block;
-    font-size: 24px;
-    font-variant: small-caps;
+    padding: 0 5px;
 }
 
-#todolist .editDone{
-    display: inline-block;
-    margin-left: 5px;
-}
-#todolist .editDone button{
-    -moz-box-shadow:inset 0px 1px 3px 0px #ffffff;
-    -webkit-box-shadow:inset 0px 1px 3px 0px #ffffff;
-    box-shadow:inset 0px 1px 3px 0px #ffffff;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-    background-color:#ededed;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:5px;
-    border: 1px solid #858484;
-    color:#777777;
-    font-size:12px;
-    font-weight:bold;
-    padding:4px 12px;
-    text-decoration:none;
-    text-shadow:1px 1px 0px #ffffff;
-    height: 24px;
-    width: 60px;
-}
-#todolist .editDone button:hover {
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
-    background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-    background-color:#dfdfdf;
-}
-#todolist .editDone button:active {
-    position:relative;
-    top:1px;
-}
-
-
-/* FOOTER RELATED STYLES*/
-.container .footer{
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* IE10+ */
-    background: linear-gradient(top bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
-}
-.copyright{
-    text-align: center;
-    font-size: 10px;
-    padding: 20px 0 20px;
-}
-
-
-
-​
