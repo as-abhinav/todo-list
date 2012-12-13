@@ -1,28 +1,42 @@
 $(document).ready(function(){
 	var Events = (function() {
+
 		var addNewItem = function() {
 			var todo_list = $('.todo-list'),	
-				newItem = $('<li><div class="sidebar"><span class="uncheck"></span></div></li>');
+				newItem = $('<li><div class="sidebar"><span class="uncheck"></span></div></li>'),
 
-			newItem.append('<div class="task"><span class="editable" contentEditable="true"></span></div>')	
+			prepareInputBox = function() {
+				var inputBox = $('<input type="text">'),
+					taskDiv = $('<div class="task"></div>'),
+					itemId = todo_list.children().length + 1;
+
+				inputBox.keyup(function(event) {
+					if (event.keyCode === 13){
+						var text = inputBox.val();
+						taskDiv.empty();
+						taskDiv.append('<span>' + text + '</span>');
+					}	
+				});
+				inputBox.attr('itemId', itemId);
+				taskDiv.append(inputBox);
+				return taskDiv;	
+			} 
+			newItem.append(prepareInputBox());	
 			todo_list.append(newItem);
 		};
 
 		return {
 			bindEvents : function() {
 				$('.list li').hover(function() {
-					$(this).addClass('selected');
-					$(this).siblings().removeClass();
+					$(this).addClass('selected').siblings().removeClass();
 				});
 
-				$('.sidebar').on('click', '.uncheck', function() {
-					$(this).removeClass();
-					$(this).addClass('check');
+				$('.todo-list').on('click', '.sidebar .uncheck', function() {
+					$(this).removeClass().addClass('check');
 				});
 
-				$('.sidebar').on('click', '.check', function(){
-					$(this).removeClass();
-					$(this).addClass('uncheck');
+				$('.todo-list').on('click', ' .sidebar .check', function(){
+					$(this).removeClass().addClass('uncheck');
 				});
 
 				$('.add-new').on('click', addNewItem);

@@ -38,12 +38,19 @@
 	margin: 5px 0;
 	height: 94%;
 	border-radius: 10px;
+	overflow: hidden;
+}
+
+.list ul {
 	overflow: auto;
+	height: 188px;
+	margin: 6px 0;
 }
 
 .list li {
-	padding: 10px 20px 5px;
+	padding: 8px 20px;
 	border-bottom: 1px solid #292929;
+	border-top: 1px solid transparent;
 }
 
 .list li.selected {
