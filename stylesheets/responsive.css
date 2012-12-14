@@ -42,6 +42,11 @@
 	.list {
 		height: 200px;
 	}
+
+	.list-container {
+		overflow: hidden;
+	}
+	
 	.right {
 		min-width: 200px;
 	}
