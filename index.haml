@@ -1,0 +1,48 @@
+%html
+	%head
+		%title ToDo
+		%link{:rel=>'stylesheet', :type=>'text/css', :href=>'stylesheets/reset.css'}
+		%link{:rel=>'stylesheet', :type=>'text/css', :href=>'stylesheets/layout.css'}
+		%link{:rel=>'stylesheet', :type=>'text/css', :href=>'stylesheets/style.css'}
+		%link{:rel=>'stylesheet', :type=>'text/css', :href=>'stylesheets/responsive.css'}
+
+	%body
+		%div.main-container.clearfix
+			%div.left
+				%button.logo ToDo
+				%input#search{:type=>'text', :placeholder=>'Search ToDo...'}
+				.list-container
+					%ul#category-list
+						%li Reminders
+						%li Completed
+						%li.selected Today
+						%li Tomorrow
+						%li Week Later
+						%li Later
+					%div.add-category
+						%input{:type=>'text',:placeholder=>'Create New List'}
+			%div.right
+				%h1.heading
+					%span.count 0
+					%span.title Reminders
+				%span.add-new +
+				%ul.todo-list
+					%li{:itmeId=>'1'}
+						%div.sidebar
+							%span.uncheck
+						%div.task
+							%span Responsive Design
+						%div.options
+							%span.edit
+							%span.close
+					%li{:itemId=>'2'}
+						%div.sidebar
+							%span.check
+						%div.task
+							%span.completed Implement Layout
+						%div.options
+							%span.edit
+							%span.close
+
+		%script{:type=>'text/javascript', :src=>'scripts/jquery-1.8.3.min.js'}
+		%script{:type=>'text/javascript', :src=>'scripts/script.js'}
