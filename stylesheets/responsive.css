@@ -39,14 +39,10 @@
 		margin: 0 auto 10px;
 	}
 
-	.list {
+	.list-container {
 		height: 200px;
 	}
 
-	.list-container {
-		overflow: hidden;
-	}
-	
 	.right {
 		min-width: 200px;
 	}

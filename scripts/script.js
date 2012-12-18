@@ -29,7 +29,9 @@ $(document).ready(function() {
 		},
 		addNewCategory = function(event) {
 			if(event.keyCode === 13) {
-				var newCategory = $('<li>' + $(this).val() + '</li>');
+
+				var newCategoryName = $(this).val().charAt(0).toUpperCase() + $(this).val().slice(1),
+					newCategory = $('<li>' + newCategoryName + '</li>');
 				category_list.append(newCategory);
 				$(this).val('');
 			}
@@ -49,17 +51,17 @@ $(document).ready(function() {
 					$(this).removeClass().addClass('uncheck');
 				});
 
-				$('.list .add-category input').focus(function() {
+				$('.list-container .add-category input').focus(function() {
 					$(this).addClass('adding');
 					$(this).attr('placeholder', '');
 				});
 
-				$('.list .add-category input').blur(function(){ 
+				$('.list-container .add-category input').blur(function(){ 
 					$(this).removeClass('adding');
 					$(this).attr('placeholder', 'Create New List...');
 				});
 
-				$('.list .add-category input').keyup(addNewCategory);
+				$('.list-container .add-category input').keyup(addNewCategory);
 
 				$('.add-new').on('click', addNewItem);
 			}

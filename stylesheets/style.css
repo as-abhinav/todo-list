@@ -1,156 +1,132 @@
 .clearfix:after {
-    content: "";
-    clear: both;
-    display: block;
-    height: 0;
-}
+  content: "";
+  clear: both;
+  display: block;
+  height: 0; }
+
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #DBD9D9;
-}
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #DBD9D9; }
+
 button {
-    color: #DBD9D9;
-    text-shadow: 0px -1px 1px #121212;
-}
+  color: #DBD9D9;
+  text-shadow: 0px -1px 1px #121212; }
 
 .main-container {
-    background: -webkit-linear-gradient(45deg, #575757 10%, #373737 90%);
-    background-size: 2px 2px;
-}
+  background: -webkit-linear-gradient(45deg, #575757 10%, #373737 90%);
+  background: linear-gradient(45deg, #575757 10%, #373737 90%);
+  background-size: 2px 2px; }
 
 .logo {
-    background:-webkit-linear-gradient(#5F5D5D 10%, #444343 91%);
-}
+  background: -webkit-linear-gradient(0deg, #5f5d5d 10%, #444343 91%);
+  background: linear-gradient(0deg, #5f5d5d 10%, #444343 91%); }
 
 #search {
-    background: -webkit-linear-gradient(left, #363636, #343434);
-    background-size: 1px 1px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    color: #DBD9D9;
-}
+  background: -webkit-linear-gradient(left, #363636, #343434);
+  background: linear-gradient(left, #363636, #343434);
+  background-size: 1px 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #DBD9D9; }
 
 .logo, #search {
-    box-shadow: 0 0 3px 2px #292929 inset;
-    outline: 0px;
-}
+  box-shadow: 0 0 3px 2px #292929 inset;
+  outline: 0px; }
 
-.list {
-    background: -webkit-linear-gradient(#363636, #333333);
-    background-size: 2px 2px;
-    box-shadow: 0 0 3px 2px #1B1B1B inset;
-}
-
-.list li {
+.list-container {
+  background: -webkit-linear-gradient(0deg, #363636, #333333);
+  background: linear-gradient(0deg, #363636, #333333);
+  background-size: 2px 2px;
+  box-shadow: 0 0 3px 2px #1B1B1B inset; }
+  .list-container li {
     letter-spacing: 1px;
-    box-shadow: 2px 3px 2px -2px #3B3B3B;
+    box-shadow: 2px 3px 2px -2px #3b3b3b;
     text-shadow: -1px -1px 2px #161616;
-    cursor: default;
-}
-
-.list li.selected {
-    background: -webkit-linear-gradient(#461D22, #441B20),
-        -webkit-linear-gradient(27deg, #451E22, #3F161B);
-    background-size: 2px 2px;  
-    box-shadow: 2px 3px 2px -2px #252424;
-}
+    cursor: default; }
+    .list-container li.selected {
+      background: -webkit-linear-gradient(#461d22, #441b20), -webkit-linear-gradient(27deg, #451e22, #3f161b);
+      background-size: 2px 2px;
+      box-shadow: 2px 3px 2px -2px #252424; }
 
 .add-category input {
-    background: -webkit-linear-gradient(#363636, #333333);
-    background-size: 2px 2px;
-    width: 100%;
-    height: 30px;
-    outline: none;
-    font-size: 18px;
-    border: none;
-    padding: 5px;
-}
-
-.add-category input.adding {
-    background: -webkit-linear-gradient(#414040, #424242);
+  background: -webkit-linear-gradient(0deg, #363636, #333333);
+  background: linear-gradient(0deg, #363636, #333333);
+  background-size: 2px 2px;
+  width: 100%;
+  height: 30px;
+  outline: none;
+  font-size: 18px;
+  border: none;
+  padding: 5px; }
+  .add-category input.adding {
+    background: -webkit-linear-gradient(0deg, #414040, #424242);
+    background: linear-gradient(0deg, #414040, #424242);
     background-size: 2px 2px;
     border: 1px solid #4D4B4B;
     box-shadow: 0 0 -2px 3px #161616;
-    color: #DBD9D9;
-}
+    color: #DBD9D9; }
 
 .right {
-    background: -webkit-linear-gradient(#EDEDE9, #EFEFE9);
-    background-size: 2px 2px;
-    box-shadow: 0 0 2px 2px #d2d2ce inset;
-}
+  background: -webkit-linear-gradient(0deg, #edede9, #efefe9);
+  background: linear-gradient(0deg, #edede9, #efefe9);
+  background-size: 2px 2px;
+  box-shadow: 0 0 2px 2px #d2d2ce inset; }
 
 .heading {
-    color: #CF4F4F;
-    line-height: 22px;
-    font-family: Tahoma, Arial, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: -1px 0px 0px #050505;
-}
+  color: #CF4F4F;
+  line-height: 22px;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: -1px 0px 0px #050505; }
 
 .count {
-    color: #787573;
-    text-shadow: none;
-}
+  color: #787573;
+  text-shadow: none; }
 
 .add-new {
-    font-size: 22px;
-    line-height: 25px;
-    color: #D4D4D3;
-    text-shadow: 0 0 2px #838381;
-    cursor: pointer;
-    box-shadow: 1px -1px 2px #EDEDE8;
-}
-
-.add-new:hover {
+  font-size: 22px;
+  line-height: 25px;
+  color: #D4D4D3;
+  text-shadow: 0 0 2px #838381;
+  cursor: pointer;
+  box-shadow: 1px -1px 2px #edede8; }
+  .add-new:hover {
     text-shadow: 0 0 3px #070707;
-    box-shadow: 0px 0px 2px 0px #B3B3B0;
-}
+    box-shadow: 0px 0px 2px 0px #B3B3B0; }
 
-.sidebar:hover .uncheck {
-    display: block;
-    width: 35px;
-    height: 35px;
-    margin: 2px;
-    background: url(../images/uncheck.png);
-}
-
-.check {
-    display: block;
-    width: 35px;
-    height: 35px;
-    margin: 2px;
-    background: url(../images/check.png);
-}
+.todo-list li:hover .uncheck {
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin: 2px;
+  background: url(../images/uncheck.png); }
+.todo-list li:hover .check {
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin: 2px;
+  background: url(../images/check.png); }
 
 .task span, .task input {
-    line-height: 35px;
-    height: 35px;
-    padding: 5px;
-    color: black;
-    display: block;
-}
-
+  line-height: 35px;
+  height: 35px;
+  padding: 5px;
+  color: black;
+  display: block; }
 .task input {
-    width: 100%;    
-    outline: none;
-    background: -webkit-linear-gradient(#EDEDE9, #EFEFE9);
-    padding: 0 5px;
-    font-size: 16px
-
-}
-
+  width: 100%;
+  outline: none;
+  background: -webkit-linear-gradient(0deg, #edede9, #efefe9);
+  background: linear-gradient(0deg, #edede9, #efefe9);
+  padding: 0 5px;
+  font-size: 16px; }
 .task .completed {
-    text-decoration: line-through;
-    color: #858383;
-}
-
+  text-decoration: line-through;
+  color: #858383; }
 .task .editable {
-    outline: none;
-    box-shadow: inset 0px 0px 5px -1px black;
-    display: block;
-    padding: 0 5px;
-}
-
+  outline: none;
+  box-shadow: inset 0px 0px 5px -1px black;
+  display: block;
+  padding: 0 5px; }

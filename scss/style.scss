@@ -1,0 +1,161 @@
+@mixin linear-gradient($deg, $para1, $para2) {
+    background: -webkit-linear-gradient($deg, $para1, $para2);   
+    background: linear-gradient($deg, $para1, $para2);   
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #DBD9D9;
+}
+button {
+    color: #DBD9D9;
+    text-shadow: 0px -1px 1px #121212;
+}
+
+.main-container {
+    @include linear-gradient(45deg, #575757 10%, #373737 90%);
+    background-size: 2px 2px;
+}
+
+.logo {
+    @include linear-gradient(0deg, #5F5D5D 10%, #444343 91%);
+}
+
+#search {
+    @include linear-gradient(left, #363636, #343434);
+    background-size: 1px 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #DBD9D9;
+}
+
+.logo, #search {
+    box-shadow: 0 0 3px 2px #292929 inset;
+    outline: 0px;
+}
+
+.list-container {
+    @include linear-gradient(0deg, #363636, #333333);
+    background-size: 2px 2px;
+    box-shadow: 0 0 3px 2px #1B1B1B inset;
+
+    li {
+        letter-spacing: 1px;
+        box-shadow: 2px 3px 2px -2px #3B3B3B;
+        text-shadow: -1px -1px 2px #161616;
+        cursor: default;
+        &.selected {
+            background: -webkit-linear-gradient(#461D22, #441B20),
+                -webkit-linear-gradient(27deg, #451E22, #3F161B);
+            background-size: 2px 2px;  
+            box-shadow: 2px 3px 2px -2px #252424;
+        }
+    }
+}
+
+.add-category {
+    input {
+        @include linear-gradient(0deg, #363636, #333333);
+        background-size: 2px 2px;
+        width: 100%;
+        height: 30px;
+        outline: none;
+        font-size: 18px;
+        border: none;
+        padding: 5px;
+
+        &.adding {
+            @include linear-gradient(0deg, #414040, #424242);
+            background-size: 2px 2px;
+            border: 1px solid #4D4B4B;
+            box-shadow: 0 0 -2px 3px #161616;
+            color: #DBD9D9;
+        }
+    }
+}
+
+.right {
+    @include linear-gradient(0deg, #EDEDE9, #EFEFE9);
+    background-size: 2px 2px;
+    box-shadow: 0 0 2px 2px #d2d2ce inset;
+}
+
+.heading {
+    color: #CF4F4F;
+    line-height: 22px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: -1px 0px 0px #050505;
+}
+
+.count {
+    color: #787573;
+    text-shadow: none;
+}
+
+.add-new {
+    font-size: 22px;
+    line-height: 25px;
+    color: #D4D4D3;
+    text-shadow: 0 0 2px #838381;
+    cursor: pointer;
+    box-shadow: 1px -1px 2px #EDEDE8;
+
+    &:hover {
+        text-shadow: 0 0 3px #070707;
+        box-shadow: 0px 0px 2px 0px #B3B3B0;
+    }
+}
+
+.todo-list li:hover {
+    .uncheck {
+        display: block;
+        width: 35px;
+        height: 35px;
+        margin: 2px;
+        background: url(../images/uncheck.png);
+    }
+    .check {
+        display: block;
+        width: 35px;
+        height: 35px;
+        margin: 2px;
+        background: url(../images/check.png);
+    }
+}
+
+.task {
+    span, input {
+        line-height: 35px;
+        height: 35px;
+        padding: 5px;
+        color: black;
+        display: block;
+    }
+    input {
+        width: 100%;    
+        outline: none;
+        @include linear-gradient(0deg, #EDEDE9, #EFEFE9);
+        padding: 0 5px;
+        font-size: 16px
+    }
+    .completed {
+        text-decoration: line-through;
+        color: #858383;
+    }
+    .editable {
+        outline: none;
+        box-shadow: inset 0px 0px 5px -1px black;
+        display: block;
+        padding: 0 5px;
+    }
+}
+
+

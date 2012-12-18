@@ -1,0 +1,112 @@
+.main-container {
+  border-radius: 10px;
+  border: 1px solid #6B6B6B;
+  margin: 0 auto;
+  padding: 10px; }
+
+.left, .right {
+  overflow: auto;
+  position: relative; }
+
+.left {
+  float: left;
+  margin-right: 10px; }
+
+.right {
+  border: 1px solid #272727;
+  border-radius: 10px; }
+
+#search {
+  margin-left: 5px;
+  width: 180px;
+  min-width: 130px;
+  border-radius: 25px;
+  padding: 0 10px; }
+
+.logo {
+  width: 50px;
+  border-radius: 7px; }
+
+.logo, #search {
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #909090; }
+
+.list-container {
+  margin: 5px 0;
+  height: 94%;
+  border-radius: 10px;
+  overflow: auto; }
+  .list-container li, .list-container .add-category {
+    padding: 8px 20px;
+    border-bottom: 1px solid #292929;
+    border-top: 1px solid transparent; }
+  .list-container .add-category {
+    padding: 8px 10px; }
+  .list-container li.selected {
+    border-bottom: 1px solid #2f0308;
+    border-top: 1px solid #5b393c; }
+  .list-container li:last {
+    border-radius: 0 0 10px 10px; }
+
+.heading {
+  padding: 25px 0 5px 15px; }
+
+.count {
+  padding-right: 5px; }
+
+.add-new {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  border-radius: 5px;
+  padding: 0 7px 3px;
+  margin-right: 10px;
+  border: 1px solid #BEBEBE; }
+
+.todo-list {
+  margin: 5px;
+  border: 2px solid #cccccc;
+  height: 88%; }
+  .todo-list li {
+    border-bottom: 2px dotted #cccccc;
+    height: 40px;
+    position: relative; }
+
+.sidebar, .task {
+  height: 100%; }
+
+.sidebar {
+  float: left;
+  width: 40px;
+  border-right: 1px solid #f9c1ca; }
+
+.task {
+  border-left: 1px solid #f9c1ca;
+  margin-left: 43px;
+  padding: 2px 5px 0; }
+
+.todo-list li:hover .options {
+  display: block; }
+
+.options {
+  display: none;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 70px;
+  height: 30px;
+  background: #CCCCC9;
+  border: 1px solid #cccccc;
+  border-right: none;
+  border-bottom-left-radius: 7px; }
+  .options .edit, .options .close {
+    display: block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 5px 0 0 5px; }
+  .options .edit {
+    background: url(../images/icons.png) no-repeat 53% 0; }
+  .options .close {
+    background: url(../images/icons.png) no-repeat 0 0; }
