@@ -112,7 +112,7 @@ button {
 .task span, .task input {
   line-height: 35px;
   height: 35px;
-  padding: 5px;
+  padding: 0 5px;
   color: black;
   display: block; }
 .task input {

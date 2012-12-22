@@ -2,30 +2,50 @@ $(document).ready(function() {
 	var Events = (function() {
 
 		var category_list = $('#category-list'),
-
+			todo_list = $('.todo-list'),
 
 		addNewItem = function() {
-			var todo_list = $('.todo-list'),	
+			var itemId = $.now(),
 				newItem = $('<li><div class="sidebar"><span class="uncheck"></span></div></li>'),
+				inputBox = $('<input type="text">'),
 
 			prepareInputBox = function() {
-				var inputBox = $('<input type="text">'),
-					taskDiv = $('<div class="task"></div>'),
-					itemId = todo_list.children().length + 1;
+				var taskDiv = $('<div class="task"></div>');
 
 				inputBox.keyup(function(event) {
 					if (event.keyCode === 13) {
 						var text = inputBox.val();
 						taskDiv.empty();
 						taskDiv.append('<span>' + text + '</span>');
+						newItem.append(createOptionsDiv());		
 					}	
 				});
-				inputBox.attr('itemId', itemId);
+				newItem.attr('itemId', itemId);
 				taskDiv.append(inputBox);
 				return taskDiv;	
-			} 
-			newItem.append(prepareInputBox());	
+			},
+			createOptionsDiv = function() {
+				var editDiv = $('<span class="edit"></span>'),
+					closeDiv = $('<span class="close"></span>'),
+					optionsDiv = $('<div class="options"></div>');
+
+				editDiv.attr('itemId', itemId);
+				closeDiv.attr('itemId', itemId);
+				editDiv.click(function() {
+					console.log($(this).attr('itemId'));
+				});
+				closeDiv.click(function() {
+					console.log($(this).attr('itemId'));
+				});
+
+				optionsDiv.append(editDiv);
+				optionsDiv.append(closeDiv);
+				return optionsDiv;
+			};
+
+			newItem.append(prepareInputBox());
 			todo_list.append(newItem);
+			inputBox.focus();
 		},
 		addNewCategory = function(event) {
 			if(event.keyCode === 13) {
