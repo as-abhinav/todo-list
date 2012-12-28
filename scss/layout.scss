@@ -127,7 +127,7 @@ $todo_border: #CCCCCC;
 	border-right: none;
 	border-bottom-left-radius: 7px;
 
-	.edit, .close{
+	.edit, .remove{
 		display: block;
 		float: left;
 		width: 25px;
@@ -137,7 +137,7 @@ $todo_border: #CCCCCC;
 	.edit{
 		background: url(../images/icons.png) no-repeat 53% 0;
 	}
-	.close {
+	.remove {
 		background: url(../images/icons.png) no-repeat 0 0;
 	}
 }

@@ -100,7 +100,7 @@
   border: 1px solid #cccccc;
   border-right: none;
   border-bottom-left-radius: 7px; }
-  .options .edit, .options .close {
+  .options .edit, .options .remove {
     display: block;
     float: left;
     width: 25px;
@@ -108,5 +108,5 @@
     margin: 5px 0 0 5px; }
   .options .edit {
     background: url(../images/icons.png) no-repeat 53% 0; }
-  .options .close {
+  .options .remove {
     background: url(../images/icons.png) no-repeat 0 0; }

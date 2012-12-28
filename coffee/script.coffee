@@ -5,10 +5,10 @@ $(document).ready ->
 
 		addNewItem = () ->
 			itemId = $.now()
-			newItem = $('<li><div class="sidebar"><span class="uncheck"></span></div></li>')
+			newItem = $('<li></li>')
 			inputBox = $('<input type="text">')	
 
-			prepareInputBox = () ->
+			createInputBox = () ->
 				taskDiv = $('<div class="task"></div>')
 
 				inputBox.on 'keyup', (event) ->
@@ -23,22 +23,48 @@ $(document).ready ->
 
 			createOptionsDiv = () ->
 				editDiv = $('<span class="edit"></span>')
-				closeDiv = $('<span class="close"></span>')
+				removeDiv = $('<span class="remove"></span>')
 				optionsDiv = $('<span class="options"></div>')
 
 				editDiv.attr 'itemId', itemId
-				closeDiv.attr 'itemId', itemId
-				editDiv.on 'click', (event) ->
+				removeDiv.attr 'itemId', itemId
 
-				closeDiv.on 'click', (event) ->
+				editDiv.on 'click', editToDo
+				removeDiv.on 'click', removeToDo 
 
 				optionsDiv.append editDiv
-				optionsDiv.append closeDiv
+				optionsDiv.append removeDiv
 				optionsDiv
 
-			newItem.append prepareInputBox()
+			createSidebar = () ->
+				sidebarDiv = $('<div class="sidebar"></div>')
+				checkbox = $('<span class="uncheck"></span>')
+				checkbox.attr 'itemId', itemId
+				sidebarDiv.append checkbox
+				sidebarDiv
+
+			newItem.append createSidebar()
+			newItem.append createInputBox()
 			todo_list.append newItem
 			inputBox.focus()
+
+		editToDo = (event) ->
+			itemId = $(this).attr 'itemId'
+			taskDiv = todo_list.children('[itemId='+itemId+']').children('.task')
+			itemData = taskDiv.children('span').text()
+			taskDiv.empty()
+			inputBox = $('<input type="text" value="'+itemData+'" />')
+			inputBox.on 'keyup', (event) ->
+				if event.keyCode == 13
+					text = inputBox.val()
+					taskDiv.empty()
+					taskDiv.append '<span>' + text + '</span>'
+			taskDiv.append inputBox
+
+		removeToDo = (event) ->
+			itemId = $(this).attr 'itemId'
+			liEle = todo_list.children('[itemId='+itemId+']')
+			liEle.remove()
 
 		addNewCategory = (event) ->
 			if event.keyCode == 13
@@ -47,6 +73,11 @@ $(document).ready ->
 				category_list.append newCategory
 				$(this).val ''
 
+		toggleStatus = (itemId) ->
+			console.log(itemId)
+			itemSpan = todo_list.children('[itemId='+itemId+']').children('.task').children('span')	
+			itemSpan.toggleClass 'completed'
+
 		{
 			bindEvents: () ->
 				category_list.on 'hover', 'li', (event) ->
@@ -54,9 +85,11 @@ $(document).ready ->
 
 				todo_list.on 'click', '.sidebar .uncheck', (event) ->
 					$(this).removeClass().addClass 'check'
+					toggleStatus($(this).attr('itemId'))
 
 				todo_list.on 'click', '.sidebar .check', (event) ->
 					$(this).removeClass().addClass 'uncheck'
+					toggleStatus($(this).attr('itemId'))
 
 				$('.list-container .add-category').on 'focus', 'input', (event) ->
 					$(this).addClass 'adding'
