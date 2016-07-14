@@ -1,0 +1,27 @@
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+.main-container{
+	width: 98%;
+}
+.left-nav{
+	float: none;
+	width: 96%;
+}
+
+.main-container .content{
+	margin-left: 2%;
+	margin-top: 10px;
+	width: 96%;
+}
+button {
+	font-size: 20px;
+}
+
+/* EXTRA FOR TODO LIST*/
+.slider {
+  top: 2px;
+  right: 0;
+}
